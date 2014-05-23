@@ -85,7 +85,7 @@ class Ckf_selector extends Fuel_base_controller {
 		}
 
 		$this->form_builder->css_class = 'asset_select';
-		$this->form_builder->add_js('<script type="text/javascript" src="'.$this->relative_path.'../assets/js/ckfinder.js"></script>');
+		$this->form_builder->add_js('<script type="text/javascript" src="'.site_url('fuel/modules/ckf_assets/assets/js/ckfinder.js').'"></script>');
 		$this->form_builder->add_js("\n<script type=\"text/javascript\">{$std_js}</script>\n\n");
 		$this->form_builder->submit_value = NULL;
 		$this->form_builder->use_form_tag = FALSE;
