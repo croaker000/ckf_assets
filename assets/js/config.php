@@ -14,7 +14,8 @@
 
 /* CKF_Assets. Use our constants */
 define('BASEPATH','#'); //dummy
-require_once getcwd().'/../../../../../config/ckf_assets_constants.php' ;
+require_once realpath(getcwd().'/../../../../../config/ckf_assets_constants.php') ;
+require_once realpath(getcwd().'/../../../../../helpers/ckf_helper.php') ;
 
 /**
  * This function must check the user session to be sure that he/she is
@@ -74,7 +75,7 @@ ATTENTION: The trailing slash is required.
 //$baseUrl = '/ckfinder/userfiles/';
 
 $path = pathinfo($_SERVER['PHP_SELF']);
-$baseUrl = $path['dirname'].'/../../../../../../../../'.CKF_ASSETS_ASSETS_URL;
+$baseUrl = '/'.get_absolute_path($path['dirname'].'/../../../../../../../../'.CKF_ASSETS_ASSETS_URL).'/';
 
 /*
 $baseDir : the path to the local directory (in the server) which points to the
