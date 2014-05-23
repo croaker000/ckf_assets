@@ -1,4 +1,4 @@
-# BACKUP MODULE FOR FUEL CMS
+# CKFINDER PLUGIN MODULE FOR FUEL CMS
 This is a [FUEL CMS](http://www.getfuelcms.com) replacement asset management module using CKFinder.
 
 ## INSTALLATION
