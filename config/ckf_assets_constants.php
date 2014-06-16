@@ -5,7 +5,8 @@
 
 define('CKF_ASSETS_VERSION', '1.0');
 define('CKF_ASSETS_FOLDER', 'ckf_assets');
-define('CKF_ASSETS_PATH', MODULES_PATH.CKF_ASSETS_FOLDER.'/');
+define('CKF_MODULES_PATH', $_SERVER['DOCUMENT_ROOT'].'/fuel/modules/');
+define('CKF_ASSETS_PATH', CKF_MODULES_PATH.CKF_ASSETS_FOLDER.'/');
 
 define('CKF_ASSETS_ASSETS_URL','assets/');
 
