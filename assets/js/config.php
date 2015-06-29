@@ -36,13 +36,11 @@ function CheckAuthentication()
 	// forget to add session_start() at the top of this file.
 
 	//return false;
-	//return true;
-
-   if (isset($_COOKIE['ckf_assets_isauthorized']) && $_COOKIE['ckf_assets_isauthorized'] == 1) {
-      return true;
-   } else {
-      return false;
-   }
+	if (isset($_COOKIE['ckf_assets_isauthorized']) && $_COOKIE['ckf_assets_isauthorized'] == 1) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 // LicenseKey : Paste your license key here. If left blank, CKFinder will be
@@ -73,7 +71,6 @@ Examples:
 ATTENTION: The trailing slash is required.
 */
 //$baseUrl = '/ckfinder/userfiles/';
-
 $path = pathinfo($_SERVER['PHP_SELF']);
 $baseUrl = '/'.get_absolute_path($path['dirname'].'/../../../../../../../../'.CKF_ASSETS_ASSETS_URL).'/';
 

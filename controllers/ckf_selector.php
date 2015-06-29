@@ -2,28 +2,14 @@
 require_once(FUEL_PATH.'libraries/Fuel_base_controller.php');
 class Ckf_selector extends Fuel_base_controller {
 
-   public $relative_path = '';
-
    function __construct() {
 		parent::__construct();
-		$this->relative_path = '/'.substr(dirname(__FILE__), strlen($_SERVER['DOCUMENT_ROOT'])).'/';
 	}
 
 	public function select($dir = NULL) {
 	   $std_js = file_get_contents(FUEL_PATH.'../ckf_assets/assets/js/ckf_assets.js');
 
 	   setcookie('ckf_assets_isauthorized',true,time()+(7200),'/');  //If we get this far then we're in Fuel and are authorised to access Assets
-
-		if (!is_numeric($dir)) {
-		   $dir = fuel_uri_string(1, NULL, TRUE);
-			$dirs = $this->fuel->assets->dirs();
-			foreach($dirs as $key => $d) {
-				if ($d == $dir) {
-				   $dir = $key;
-					break;
-				}
-			}
-		}
 
 		$value = '';
 		if ($this->session->flashdata('uploaded_post')) {
@@ -54,7 +40,6 @@ class Ckf_selector extends Fuel_base_controller {
 		$redirect_to = uri_safe_encode(fuel_uri(fuel_uri_string(), TRUE)); // added back to make it refresh
 
       $preview = ' <a href="#" onclick="ckf_browseserver();" class="btn_field">Browse</a>';
-      $preview.= ' OR <a href="'.fuel_url('assets/inline_create?asset_folder='.urlencode($dir).'&redirect_to='.$redirect_to).'" class="btn_field">Upload</a>';
       if ($value <> '') {
          $preview.= '<div id="asset_preview"><img src="'.img_path($value).'" id="asset_inline" class="" /></div>';
       } else {
@@ -85,7 +70,7 @@ class Ckf_selector extends Fuel_base_controller {
 		}
 
 		$this->form_builder->css_class = 'asset_select';
-		$this->form_builder->add_js('<script type="text/javascript" src="'.site_url('fuel/modules/ckf_assets/assets/js/ckfinder.js').'"></script>');
+
 		$this->form_builder->add_js("\n<script type=\"text/javascript\">{$std_js}</script>\n\n");
 		$this->form_builder->submit_value = NULL;
 		$this->form_builder->use_form_tag = FALSE;
@@ -95,7 +80,6 @@ class Ckf_selector extends Fuel_base_controller {
 		$vars['form'] = $this->form_builder->render_divs();
 		$this->fuel->admin->set_inline(TRUE);
 
-//		$crumbs = array('' => $this->module_name, lang('assets_select_action'));
 		$crumbs = array('' => 'Assets', lang('assets_select_action'));
 		$this->fuel->admin->set_titlebar($crumbs,'ico_site_ckf_assets');
 		$this->fuel->admin->render('ckf_modal_select', $vars);

@@ -3,7 +3,7 @@
  * You'll need to create a .thumbs directory in the root of your Fuel ./assets directory with 0777 permissions
  * */
 
-define('CKF_ASSETS_VERSION', '1.0');
+define('CKF_ASSETS_VERSION', '2.5');
 define('CKF_ASSETS_FOLDER', 'ckf_assets');
 define('CKF_MODULES_PATH', $_SERVER['DOCUMENT_ROOT'].'/fuel/modules/');
 define('CKF_ASSETS_PATH', CKF_MODULES_PATH.CKF_ASSETS_FOLDER.'/');

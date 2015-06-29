@@ -27,5 +27,8 @@ To access the documentation, you can visit it [here](http://tbc).
 ## BUGS
 To file a bug report, go to the [issues](https://tbc) page.
 
+## CHANGELOG
+v2.5 Modified to support Fuel v1.3 and migrated to CKFinder v2.5
+
 ## LICENSE
 CKFinder Assets for FUEL CMS is licensed under [APACHE 2](http://www.apache.org/licenses/LICENSE-2.0).

@@ -22,6 +22,7 @@
 //<![CDATA[
 (function()
 {
+	   console.log('Loading ckfinder.html');
 		var config = {};
 		var get = CKFinder.tools.getUrlParam;
 		var getBool = function( v )
@@ -133,7 +134,7 @@
 
 		// Always use 100% width and height when nested using this middle page.
 		config.width = config.height = '100%';
-		
+
 		var ckfinder = new CKFinder( config );
 		ckfinder.replace( 'ckfinder', config );
 })();

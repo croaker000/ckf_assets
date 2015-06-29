@@ -23,8 +23,8 @@ require_once(FUEL_PATH.'/libraries/Fuel_base_controller.php');
  * @package		FUEL CMS
  * @subpackage	Controller
  * @category	Controller
- * @author		David McReynolds @ Daylight Studio
- * @link		http://docs.getfuelcms.com/modules/backup
+ * @author		Martin Gautier, Fear of Mice
+ * @link		https://github.com/croaker000/ckf_assets
  */
 
 // --------------------------------------------------------------------
@@ -50,7 +50,7 @@ class Ckf_assets extends Fuel_base_controller {
 	 */
 	function index()
 	{
-		$this->_validate_user('ckf_assets');
+		$this->_validate_user('site/ckf_assets');
 
 		setcookie('ckf_assets_isauthorized',true,time()+(7200),'/');  //If we get this far then we're in Fuel and are authorised to access Assets
 
